@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Issue Reporter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Water Issue Reporter</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reportIssue.html">Report Issue</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="map"></section>
+        <button id="reportIssueButton">Report Issue</button>
+    </main>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDTqgVDgMjgPLyBNrdmMHSs4rrnH81Yd0k",
+            authDomain: "sample-97685.firebaseapp.com",
+            databaseURL: "https://sample-97685-default-rtdb.firebaseio.com",
+            projectId: "sample-97685",
+            storageBucket: "sample-97685.appspot.com",
+            messagingSenderId: "569008691737",
+            appId: "1:569008691737:web:d8732cfda2a7712acae888",
+            measurementId: "G-0RZR3LEH9K"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
