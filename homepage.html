@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+        /* CSS styles can be added here or linked from an external file */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .navbar-brand {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .navbar-icons {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar-icons .icon {
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        .water-issues {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .water-issues img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .capture-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .capture-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .capture-button a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js"></script>
+</head>
+<body>
+    <section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </section>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">AquaReport</div>
+        <div class="navbar-icons">
+            <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="icon"><i class="fas fa-bell"></i></span>
+        </div>
+    </nav>
+    
+    
+    <!-- Water Issue Pictures -->
+    <div class="water-issues">
+        <!-- Dynamically moving water issue pictures go here -->
+        <img src="image.png" alt="Water Issue 1">
+        <img src="image copy.png" alt="Water Issue 2">
+        <img src="image copy 2.png" alt="Water Issue 3">
+    </div>
+    
+    <!-- Capture/Upload Image Button -->
+    <div class="capture-button">
+        <a href="reportIssue.html">Capture or Upload an Image</a>
+    </div>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyC1IqrU171lM-ULOBQs2I70zVP98ik2xXA",
+        authDomain: "aqua-report-33e18.firebaseapp.com",
+        projectId: "aqua-report-33e18",
+        storageBucket: "aqua-report-33e18.appspot.com",
+        messagingSenderId: "758473544852",
+        appId: "1:758473544852:web:c88ab0e4931d02edbf5081",
+        measurementId: "G-G20D1MX3B2"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    //console.log(app);
+    const auth = getAuth();
+    const database = getDatabase(app);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
