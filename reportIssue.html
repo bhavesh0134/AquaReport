@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue</title>
+    <link rel="stylesheet" href="styles.css">
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+</script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-brand">Report Problem</div>
+    <div class="navbar-icons">
+        <span class="icon"><i class="fas fa-bell"></i></span>
+    </div>
+</nav>
+
+<!-- Camera Preview -->
+<div class="camera-preview">
+    <video id="camera-preview" autoplay playsinline></video>
+</div>
+
+<!-- Capture Button -->
+<button id="capture-button">Capture</button>
+
+<!-- Add more images Button -->
+<button id="add-more-images-button">+ Add more images</button>
+
+<!-- Description -->
+<textarea id="description" placeholder="Describe your problem..."></textarea>
+
+<!-- Relevant Problems -->
+<div class="relevant-problems">
+    <p>Mark down the relevant problems:</p>
+    <div class="checkboxes">
+        <!-- Left side checkboxes -->
+        <div class="left-checkboxes">
+            <label><input type="checkbox" name="problem" value="Leakage"> Leakage</label><br>
+            <label><input type="checkbox" name="problem" value="Pollution"> Pollution</label><br>
+            <label><input type="checkbox" name="problem" value="Flooding"> Flooding</label>
+        </div>
+        <!-- Right side checkboxes -->
+        <div class="right-checkboxes">
+            <label><input type="checkbox" name="problem" value="Water Contamination"> Water Contamination</label><br>
+            <label><input type="checkbox" name="problem" value="Irrigation Issues"> Irrigation Issues</label><br>
+            <label><input type="checkbox" name="problem" value="Irregular supply"> Irregular supply</label>
+        </div>
+    </div>
+</div>
+
+<!-- Location -->
+<div class="location">
+    <input type="text" id="location" placeholder="Location...">
+    <i class="fas fa-map-marker-alt"></i> <!-- Location icon -->
+</div>
+
+<!-- Submit Buttons -->
+<div class="buttons">
+    <button id="cancel-button">Cancel</button>
+    <button id="submit-button">Submit</button>
+</div>
+
+<!-- JavaScript -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome -->
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyC1IqrU171lM-ULOBQs2I70zVP98ik2xXA",
+        authDomain: "aqua-report-33e18.firebaseapp.com",
+        projectId: "aqua-report-33e18",
+        storageBucket: "aqua-report-33e18.appspot.com",
+        messagingSenderId: "758473544852",
+        appId: "1:758473544852:web:c88ab0e4931d02edbf5081",
+        measurementId: "G-G20D1MX3B2"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
